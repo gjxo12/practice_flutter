@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice/widget/button.dart';
 
 class Player {
   String? name;
@@ -16,13 +17,15 @@ class App extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Color(0xFF181818),
+        backgroundColor: const Color(0xFF181818),
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 80,
               ),
               Row(
@@ -31,7 +34,7 @@ class App extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      const Text(
                         'hey, Hur!!!',
                         style: TextStyle(
                             color: Colors.white,
@@ -47,7 +50,7 @@ class App extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 120,
               ),
               Text(
@@ -55,10 +58,10 @@ class App extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 22, color: Colors.white.withOpacity(0.8)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Text(
+              const Text(
                 'Money?: \$5',
                 style: TextStyle(
                   color: Colors.white,
@@ -66,28 +69,22 @@ class App extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(45)),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 15,
-                        horizontal: 40,
-                      ),
-                      child: Text(
-                        'transfer',
-                        style: TextStyle(
-                          fontSize: 22,
-                        ),
-                      ),
-                    ),
-                  )
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Button(
+                    text: 'tranfer',
+                    bgColor: Colors.amber,
+                    textColor: Colors.black,
+                  ),
+                  Button(
+                    text: 'Request',
+                    bgColor: Colors.black45,
+                    textColor: Colors.blue,
+                  ),
                 ],
               )
             ],
@@ -95,6 +92,5 @@ class App extends StatelessWidget {
         ),
       ),
     );
-    throw UnimplementedError();
   }
 }
